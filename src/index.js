@@ -4,6 +4,14 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+//STORE -> GLOBALIZED STATE (LIKE A DB) THAT ALL COMPONENTS CAN GRAB DATA FROM
+
+//ACTION INCREMENT
+
+//REDUCER
+
+//DISPATCH
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
