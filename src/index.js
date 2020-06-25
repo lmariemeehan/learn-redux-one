@@ -5,7 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {createStore} from 'redux';
 
-//STORE -> GLOBALIZED STATE (LIKE A DB) THAT ALL COMPONENTS CAN GRAB DATA FROM. It's read only I believe.
+//STORE -> GLOBALIZED STATE THAT ALL COMPONENTS CAN GRAB DATA FROM. It's read only I believe. In the past, you would create a state that would belong to a specific component. But with redux, the state is 'globalized' and is called the 'store' 
 
 //ACTION INCREMENT - This just describes what you want to do. It's a simple function that returns an object.
 const increment = () => {
@@ -28,6 +28,10 @@ const counter = (state = 0; action) => {
         return state - 1
   }
 }
+
+//Now this is the actual store. Nothing fancy.
+let store = createStore(counter);
+
 //DISPATCH
 
 ReactDOM.render(
