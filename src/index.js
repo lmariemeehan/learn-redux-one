@@ -19,8 +19,15 @@ const decrement = () {
   }
 }
 
-//REDUCER
-
+//REDUCER - Basically just another function that will return an object. This is essential with working with the 'store' of redux. This function takes two arguments. The first is the original state of your function and the second being the action.
+const counter = (state = 0; action) => {
+  switch(action.type){
+    case "INCREMENT":
+      return state + 1
+      case "DECREMENT":
+        return state - 1
+  }
+}
 //DISPATCH
 
 ReactDOM.render(
