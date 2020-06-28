@@ -13,26 +13,31 @@ const increment = () => {
     type: 'INCREMENT'
   }
 }
-const decrement = () {
+const decrement = () => {
   return {
     type: 'DECREMENT'
   }
 }
 
-//REDUCER - Basically just another function that will return an object. This is essential with working with the 'store' of redux. This function takes two arguments. The first is the original state of your function and the second being the action.
-const counter = (state = 0; action) => {
+//REDUCER - This instructs the store how to transition from one state to the next and is essential with working with the 'store' of redux. Basically just another function that will return an object. This function takes two arguments. The first is the original state of your function and the second being the action.
+
+const counter = (state = 0, action) => {
   switch(action.type){
     case "INCREMENT":
-      return state + 1
-      case "DECREMENT":
-        return state - 1
+      return state + 1;
+    case "DECREMENT":
+      return state - 1
   }
 }
 
-//Now this is the actual store. Nothing fancy.
+//Now this is the actual store. Nothing fancy. The store has a "createStore" function that gets a reducer passed in to it. See below.
 let store = createStore(counter);
 
-//DISPATCH
+//Display it in the console
+store.subscribe(() => console.log(store.getState()))
+
+//DISPATCH - This is the executioner. It sends the action to the reducer, then the reducer checks what it needs to do, then the store gets updated.
+store.dispatch(increment())
 
 ReactDOM.render(
   <React.StrictMode>
